@@ -1,0 +1,29 @@
+Standard Fields
+---------------
+Name
+Year
+Length
+Beam
+Draft
+
+Builder
+Designer [interior exterior]
+Naval archietect
+
+
+
+
+Guests
+Cabins
+Crews
+
+
+Engine quantity
+
+Fuel Type	
+Manufacture
+Model
+Power
+
+Total Power 
+
