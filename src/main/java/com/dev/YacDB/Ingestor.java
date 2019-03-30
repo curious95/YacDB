@@ -6,16 +6,31 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Ingestor {
 
+	public static WebDriver driver;
 	
-	public static void ingest() {
+	public static void initDriver() {
 		
 		String chromeDriverPath = "/Users/devx/Documents/devx/EC_Wspace/YacDB/res/chromedriver" ;  
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);  
 		ChromeOptions options = new ChromeOptions();  
 		options.addArguments("headless");
 		options.addArguments ("--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");  
-		WebDriver driver = new ChromeDriver(options);  
+		driver = new ChromeDriver(options);  
+		
+	}
+	
+	public static void closeDriver() {
+		
+		driver.close();
+		
+	}
+	
+	public static void ingest() {
+		
+		// Ingestion Code Here
+		
 		driver.get("https://www.superyachts.com/motor-yacht-9161/azzam-specification.htm");
+
 		
 	}
 	
