@@ -4,11 +4,9 @@ public class YchDBInitializer {
 
 	
 	public static void main(String args[]) {
-		
-		Ingestor ingestor = new Ingestor();
-		ingestor.ingest();
+	
+		SuperYac SY = new SuperYac();
 		
 	}
-	
-	
+		
 }

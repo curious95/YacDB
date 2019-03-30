@@ -25,11 +25,13 @@ public class Ingestor {
 		
 	}
 	
-	public static void ingest() {
+	public static String ingest(String URL) {
 		
 		// Ingestion Code Here
 		
-		driver.get("https://www.superyachts.com/motor-yacht-9161/azzam-specification.htm");
+		driver.get(URL);
+		
+		return driver.getPageSource();
 
 		
 	}
