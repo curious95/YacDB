@@ -38,8 +38,8 @@ public class SuperYac {
 			}
 			
 			for(String url:urlSet) {
-				System.out.println(url.replace(".htm", "-specification.htm"));
-				ychParser(Jsoup.parse(ingestor.ingest(url.replace(".htm", "-specification.htm"))));
+				//System.out.println(url.replace(".htm", "-specification.htm"));
+				ychParser(Jsoup.parse(ingestor.ingest("https://www.superyachts.com"+url.replace(".htm", "-specification.htm"))));
 			}
 			
 			//System.out.println(doc.text());
@@ -55,7 +55,18 @@ public class SuperYac {
 	public static void ychParser(Document doc) {
 		
 		//System.out.println("In YCH");
-		System.out.println(doc.getElementsByClass("specifications").select("td"));
+		Elements listItems  = doc.getElementsByClass("specifications").select("td");
+		
+//		for(Element item:listItems) {
+//			item.ha
+//			urlSet.add(item.attr("href"));
+//		}
+//		
+		
+		while(listItems.hasNext()) {
+	         Element element = itr.next();
+	         System.out.print(element + " ");
+	      }
 		
 	}
 	
