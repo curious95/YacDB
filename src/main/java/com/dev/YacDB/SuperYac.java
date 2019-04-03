@@ -25,7 +25,7 @@ public class SuperYac {
 		// Looping through pages
 		// https://www.superyachts.com/directory/completed_yachts.htm?page=2
 		
-		for(int i = 1; i<=1; i++) {
+		for(int i = 2; i<=2; i++) {
 			
 			urlSet.clear();
 			String URL = "https://www.superyachts.com/directory/completed_yachts.htm?page="+range;
@@ -54,19 +54,32 @@ public class SuperYac {
 	
 	public static void ychParser(Document doc) {
 		
+		boolean keyVal = false;
+		String key="", val="";
 		//System.out.println("In YCH");
 		Elements listItems  = doc.getElementsByClass("specifications").select("td");
 		
-//		for(Element item:listItems) {
-//			item.ha
-//			urlSet.add(item.attr("href"));
-//		}
-//		
-		
-		while(listItems.hasNext()) {
-	         Element element = itr.next();
-	         System.out.print(element + " ");
-	      }
+		for(Element item:listItems) {
+			
+			//System.out.println(item.text());
+			
+			if(keyVal) {
+				val = item.text();
+				System.out.println("Key = "+key+"  Val = "+val);
+				key="";
+				val="";
+				keyVal=false;
+				
+			}
+			
+			if(item.text().contains(":")) {
+				keyVal = true;
+				key = item.text();
+			}
+			
+			
+			
+		}
 		
 	}
 	
