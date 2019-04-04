@@ -337,8 +337,51 @@ public class YchCreator {
 	public static JsonObject getYchObj() {
 
 		JsonObject jo = new JsonObject();
-		jo.addProperty("name", YchCreator.name);
-		jo.addProperty("type", YchCreator.type);
+		jo.addProperty("name",YchCreator.name );
+		jo.addProperty("type",YchCreator.type);
+		jo.addProperty("yac_model",YchCreator.yac_model );
+		jo.addProperty("sub_type",YchCreator.sub_type );
+		jo.addProperty("builder",YchCreator.builder );
+		jo.addProperty("naval_architect",YchCreator.naval_architect );
+		jo.addProperty("exterior_designers",YchCreator.exterior_designers );
+		jo.addProperty("interior_designer",YchCreator.interior_designer );
+		jo.addProperty("year",YchCreator.year );
+		jo.addProperty("flag",YchCreator.flag );
+		jo.addProperty("mca",YchCreator.mca );
+		jo.addProperty("class_",YchCreator.class_ );
+		jo.addProperty("hull_nb",YchCreator.hull_nb );
+		jo.addProperty("hull_colour",YchCreator.hull_colour );
+		jo.addProperty("length_overall",YchCreator.length_overall );
+		jo.addProperty("length_at_waterline",YchCreator.length_at_waterline );
+		jo.addProperty("beam",YchCreator.beam );
+		jo.addProperty("draft_min",YchCreator.draft_min );
+		jo.addProperty("draft_max",YchCreator.draft_max );
+		jo.addProperty("gross_tonnage",YchCreator.gross_tonnage );
+		jo.addProperty("guests",YchCreator.guests );
+		jo.addProperty("cabins_total",YchCreator.cabins_total );
+		jo.addProperty("cabins",YchCreator.cabins );
+		jo.addProperty("crew",YchCreator.crew );
+		jo.addProperty("hull_configuration",YchCreator.hull_configuration );
+		jo.addProperty("hull_material",YchCreator.hull_material );
+		jo.addProperty("superstructure",YchCreator.superstructure );
+		jo.addProperty("deck_material",YchCreator.deck_material );
+		jo.addProperty("decks_nb",YchCreator.decks_nb );
+		jo.addProperty("quantity",YchCreator.quantity );
+		jo.addProperty("fuel_type",YchCreator.fuel_type );
+		jo.addProperty("manufacturer",YchCreator.manufacturer );
+		jo.addProperty("eng_model",YchCreator.eng_model );
+		jo.addProperty("power",YchCreator.power );
+		jo.addProperty("total_power",YchCreator.total_power );
+		jo.addProperty("propulsion",YchCreator.propulsion );
+		jo.addProperty("max_speed",YchCreator.max_speed );
+		jo.addProperty("cruising_speed",YchCreator.cruising_speed );
+		jo.addProperty("range",YchCreator.range );
+		jo.addProperty("fuel_capacity",YchCreator.fuel_capacity );
+		jo.addProperty("water_capacity",YchCreator.water_capacity );
+		jo.addProperty("generator",YchCreator.generator );
+		jo.addProperty("stabilizers",YchCreator.stabilizers );
+		jo.addProperty("thrusters",YchCreator.thrusters );
+		jo.addProperty("amenities",YchCreator.amenities );
 		
 		return jo;
 	}
