@@ -1,9 +1,12 @@
 package com.dev.YacDB;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -50,16 +53,17 @@ public class SuperYac {
 				
 				// System.out.println("\n\n\n\n\n ");
 				
-				
+				String fileName = "";
 				for (Map.Entry<String, String> entry : objMap.entrySet()) {
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
-						
+					
 					
 					// Switch case to initialize setters
 					switch(entry.getKey()) {
 					
 					case "name":
 						//System.out.println(entry.getValue());
+						fileName = entry.getValue();
 						ych.setName(entry.getValue());
 						break;
 					case "type":
@@ -69,13 +73,18 @@ public class SuperYac {
 					
 				}
 				
-				System.out.println(ych.getYchObj().toString());
+				//System.out.println(ych.getYchObj().toString());
 				
+				File file = new File("jsonfiles/"+fileName+".json");
+				try {
+					FileUtils.writeStringToFile(file, ych.getYchObj().toString());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				break; //break for limiting iterations during testing
-			}
-
-			
+			}	
 
 		}
 
