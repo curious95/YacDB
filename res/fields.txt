@@ -27,3 +27,51 @@ Power
 
 Total Power 
 
+
+Sample Keys to be used
+----------------------
+Key = Name:  Val = Ola Mona
+Key = Type:  Val = Motor Yacht
+Key = Model:  Val = Custom
+Key = Sub Type:  Val = 
+Key = Builder:  Val = Leopard Yachts
+Key = Naval Architect:  Val = 
+Key = Exterior Designers:  Val = 
+Key = Interior Designer:  Val = 
+Key = Year:  Val = 2006
+Key = Flag:  Val = French
+Key = MCA:  Val = Yes
+Key = Class:  Val = -
+Key = Hull NB:  Val = -
+Key = Hull Colour:  Val = -
+Key = Length Overall:  Val = 24.00m (78'8"ft)
+Key = Length at Waterline:  Val = -
+Key = Beam:  Val = 6.71m (22'0"ft)
+Key = Draft (min):  Val = -
+Key = Draft (max):  Val = 0.99m (3'2"ft)
+Key = Gross Tonnage:  Val = -
+Key = Guests:  Val = 6
+Key = Cabins Total:  Val = 3
+Key = Cabins:  Val = -
+Key = Crew:  Val = 2
+Key = Hull Configuration:  Val = Planing
+Key = Hull Material:  Val = GRP
+Key = Superstructure:  Val = GRP
+Key = Deck Material:  Val = -
+Key = Decks NB:  Val = -
+Key = Quantity:  Val = 2
+Key = Fuel Type:  Val = -
+Key = Manufacturer:  Val = MTU
+Key = Model:  Val = -
+Key = Power:  Val = 1500hp / 1119kW
+Key = Total Power:  Val = 3000hp / 2237kW
+Key = Propulsion:  Val = -
+Key = Max Speed:  Val = 36.00 kts
+Key = Cruising Speed:  Val = 30.00 kts
+Key = Range:  Val = -
+Key = Fuel Capacity:  Val = -
+Key = Water Capacity:  Val = -
+Key = Generator:  Val = 2 x Kohler 20 kW
+Key = Stabilizers:  Val = -
+Key = Thrusters:  Val = -
+Key = Amenities:  Val = -
