@@ -11,6 +11,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.support.ui.Sleeper;
 
 public class SuperYac {
 
@@ -27,10 +28,10 @@ public class SuperYac {
 		// Looping through pages
 		// https://www.superyachts.com/directory/completed_yachts.htm?page=2
 
-		for (int i = 2; i <= 2; i++) {
+		for (int i = 1; i <= 1; i++) {
 
 			urlSet.clear();
-			String URL = "https://www.superyachts.com/directory/completed_yachts.htm?page=" + range;
+			String URL = "https://www.superyachts.com/directory/completed_yachts.htm?page=" + i;
 			Document doc = Jsoup.parse(ingestor.ingest(URL));
 
 			Elements listItems = doc.getElementById("completeBoats").select("a");
@@ -41,6 +42,7 @@ public class SuperYac {
 
 			for (String url : urlSet) {
 
+				System.out.println("SuperYachts  :  " + url);
 				// Clearing the old object map
 				objMap.clear();
 
@@ -211,9 +213,14 @@ public class SuperYac {
 					e.printStackTrace();
 				}
 
-				// break; //break for limiting iterations during testing
+				//break; // break for limiting iterations during testing
 			}
-
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		ingestor.closeDriver(); // Driver instances closes here
@@ -227,12 +234,17 @@ public class SuperYac {
 		// System.out.println("In YCH");
 		Elements listItems = doc.getElementsByClass("specifications").select("td");
 
+		int ctr = 0;
+
 		for (Element item : listItems) {
 
 			// System.out.println(item.text());
 
 			if (keyVal) {
 				val = item.text();
+				if (val.equals("-")) {
+					val = "";
+				}
 				// System.out.println("Key = " + key + " Val = " + val);
 				objMap.put(key, val);
 				key = "";
@@ -245,12 +257,15 @@ public class SuperYac {
 				keyVal = true;
 				key = item.text().replace(" (", "_").replace(")", "").replace(":", "");
 				key = key.replace(" ", "_").toLowerCase();
-				if (key.equals("model")) {
+				if (key.equals("model") && ctr == 0) {
 					key = "yac_model";
+					ctr++;
 				}
-				if (key.equals("model")) {
+
+				if (key.equals("model") && ctr != 0) {
 					key = "eng_model";
 				}
+
 				if (key.equals("class")) {
 					key = "class_";
 				}
