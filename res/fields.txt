@@ -30,48 +30,48 @@ Total Power
 
 Sample Keys to be used
 ----------------------
-Key = Name:  Val = Aori
-Key = Type:  Val = Sail Yacht
-Key = Model:  Val = Wally 80
-Key = Sub_Type:  Val = 
-Key = Builder:  Val = Wally
-Key = Naval_Architect:  Val = Farr Yacht Design
-Key = Exterior_Designers:  Val = Wally
-Key = Interior_Designer:  Val = Lazzarini Carl Pickering
-Key = Year:  Val = 2004
-Key = Flag:  Val = -
-Key = MCA:  Val = 
-Key = Class:  Val = -
-Key = Hull_NB:  Val = -
-Key = Hull_Colour:  Val = -
-Key = Length_Overall:  Val = 24.00m (78'8"ft)
-Key = Length_at_Waterline:  Val = -
-Key = Beam:  Val = 5.96m (19'6"ft)
-Key = Draft_min:  Val = -
-Key = Draft_max:  Val = 4.00m (13'1"ft)
-Key = Gross_Tonnage:  Val = -
-Key = Guests:  Val = 6
-Key = Cabins_Total:  Val = 3
-Key = Cabins:  Val = 1 Master / 2 Twin / 2 Pullman /
-Key = Crew:  Val = -
-Key = Hull_Configuration:  Val = -
-Key = Hull_Material:  Val = GRP
-Key = Superstructure:  Val = GRP
-Key = Deck_Material:  Val = Teak
-Key = Decks_NB:  Val = -
-Key = Quantity:  Val = 1
-Key = Fuel_Type:  Val = Diesel
-Key = Manufacturer:  Val = Cummins
-Key = Model:  Val = -
-Key = Power:  Val = 250hp / 186kW
-Key = Total_Power:  Val = 250hp / 186kW
-Key = Propulsion:  Val = Single screw
-Key = Max_Speed:  Val = 10.50 kts
-Key = Cruising_Speed:  Val = 9.00 kts
-Key = Range:  Val = -
-Key = Fuel_Capacity:  Val = 2,000.00 L / 439.94 USG
-Key = Water_Capacity:  Val = 1,300.00 L / 285.96 USG
-Key = Generator:  Val = -
-Key = Stabilizers:  Val = -
-Key = Thrusters:  Val = -
-Key = Amenities:  Val = -
+Key = name:  Val = Phaedra I
+Key = type:  Val = Motor Yacht
+Key = yac_model:  Val = Custom
+Key = sub_type:  Val = 
+Key = builder:  Val = Benetti Sail Division
+Key = naval_architect:  Val = 
+Key = exterior_designers:  Val = 
+Key = interior_designer:  Val = 
+Key = year:  Val = 2002
+Key = flag:  Val = Austria
+Key = mca:  Val = 
+Key = class_:  Val = -
+Key = hull_nb:  Val = -
+Key = hull_colour:  Val = -
+Key = length_overall:  Val = 24.00m (78'8"ft)
+Key = length_at_waterline:  Val = -
+Key = beam:  Val = 6.20m (20'4"ft)
+Key = draft_min:  Val = -
+Key = draft_max:  Val = 2.40m (7'10"ft)
+Key = gross_tonnage:  Val = 104 tonnes
+Key = guests:  Val = 8
+Key = cabins_total:  Val = 3
+Key = cabins:  Val = -
+Key = crew:  Val = 3
+Key = hull_configuration:  Val = Displacement
+Key = hull_material:  Val = Steel
+Key = superstructure:  Val = Aluminium
+Key = deck_material:  Val = -
+Key = decks_nb:  Val = -
+Key = quantity:  Val = 2
+Key = fuel_type:  Val = Diesel
+Key = manufacturer:  Val = MAN
+Key = eng_model:  Val = 2866 LXE 40
+Key = power:  Val = 379hp / 283kW
+Key = total_power:  Val = 758hp / 565kW
+Key = propulsion:  Val = -
+Key = max_speed:  Val = -
+Key = cruising_speed:  Val = 10.00 kts
+Key = range:  Val = 3000.00 miles at 10 kts
+Key = fuel_capacity:  Val = 20,000.00 L / 4,399.38 USG
+Key = water_capacity:  Val = 4,000.00 L / 879.88 USG
+Key = generator:  Val = -
+Key = stabilizers:  Val = -
+Key = thrusters:  Val = -
+Key = amenities:  Val = -
