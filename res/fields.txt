@@ -30,48 +30,48 @@ Total Power
 
 Sample Keys to be used
 ----------------------
-Key = Name:  Val = Ola Mona
-Key = Type:  Val = Motor Yacht
+Key = Name:  Val = K2Wind
+Key = Type:  Val = Sail Yacht
 Key = Model:  Val = Custom
-Key = Sub Type:  Val = 
-Key = Builder:  Val = Leopard Yachts
-Key = Naval Architect:  Val = 
-Key = Exterior Designers:  Val = 
-Key = Interior Designer:  Val = 
-Key = Year:  Val = 2006
-Key = Flag:  Val = French
-Key = MCA:  Val = Yes
-Key = Class:  Val = -
+Key = Sub Type:  Val = Fast Cruising
+Key = Builder:  Val = Wally
+Key = Naval Architect:  Val = German Frers
+Key = Exterior Designers:  Val = German Frers
+Key = Interior Designer:  Val = Wally
+Key = Year:  Val = 2000
+Key = Flag:  Val = -
+Key = MCA:  Val = 
+Key = Class:  Val = A1
 Key = Hull NB:  Val = -
 Key = Hull Colour:  Val = -
 Key = Length Overall:  Val = 24.00m (78'8"ft)
 Key = Length at Waterline:  Val = -
-Key = Beam:  Val = 6.71m (22'0"ft)
-Key = Draft (min):  Val = -
-Key = Draft (max):  Val = 0.99m (3'2"ft)
+Key = Beam:  Val = 5.85m (19'2"ft)
+Key = Draft-min:  Val = 2.50m (8'2"ft)
+Key = Draft-max:  Val = 4.05m (13'3"ft)
 Key = Gross Tonnage:  Val = -
 Key = Guests:  Val = 6
 Key = Cabins Total:  Val = 3
-Key = Cabins:  Val = -
+Key = Cabins:  Val = 1 Master / 1 Double / 1 Twin /
 Key = Crew:  Val = 2
-Key = Hull Configuration:  Val = Planing
-Key = Hull Material:  Val = GRP
-Key = Superstructure:  Val = GRP
-Key = Deck Material:  Val = -
+Key = Hull Configuration:  Val = Lifting Keel
+Key = Hull Material:  Val = Composite
+Key = Superstructure:  Val = Composite
+Key = Deck Material:  Val = Teak
 Key = Decks NB:  Val = -
-Key = Quantity:  Val = 2
-Key = Fuel Type:  Val = -
-Key = Manufacturer:  Val = MTU
-Key = Model:  Val = -
-Key = Power:  Val = 1500hp / 1119kW
-Key = Total Power:  Val = 3000hp / 2237kW
-Key = Propulsion:  Val = -
-Key = Max Speed:  Val = 36.00 kts
-Key = Cruising Speed:  Val = 30.00 kts
+Key = Quantity:  Val = 1
+Key = Fuel Type:  Val = Diesel
+Key = Manufacturer:  Val = Yanmar
+Key = Model:  Val = 4LH
+Key = Power:  Val = 180hp / 134kW
+Key = Total Power:  Val = 180hp / 134kW
+Key = Propulsion:  Val = Single Screw
+Key = Max Speed:  Val = 11.00 kts
+Key = Cruising Speed:  Val = 0.00 kts
 Key = Range:  Val = -
-Key = Fuel Capacity:  Val = -
-Key = Water Capacity:  Val = -
-Key = Generator:  Val = 2 x Kohler 20 kW
+Key = Fuel Capacity:  Val = 900.00 L / 197.97 USG
+Key = Water Capacity:  Val = 600.00 L / 131.98 USG
+Key = Generator:  Val = 
 Key = Stabilizers:  Val = -
 Key = Thrusters:  Val = -
 Key = Amenities:  Val = -
