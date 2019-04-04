@@ -38,6 +38,7 @@ public class SuperYac {
 				ychParser(Jsoup.parse(
 						ingestor.ingest("https://www.superyachts.com" + url.replace(".htm", "-specification.htm"))));
 				System.out.println("\n\n\n\n\n ");
+				break;
 			}
 
 			// System.out.println(doc.text());
@@ -70,7 +71,8 @@ public class SuperYac {
 
 			if (item.text().contains(":")) {
 				keyVal = true;
-				key = item.text().replace(" (", "-").replace(")", "");
+				key = item.text().replace(" (", "_").replace(")", "");
+				key = key.replace(" ", "_").toLowerCase();
 			}
 
 		}

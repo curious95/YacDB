@@ -30,48 +30,48 @@ Total Power
 
 Sample Keys to be used
 ----------------------
-Key = Name:  Val = K2Wind
+Key = Name:  Val = Aori
 Key = Type:  Val = Sail Yacht
-Key = Model:  Val = Custom
-Key = Sub Type:  Val = Fast Cruising
+Key = Model:  Val = Wally 80
+Key = Sub_Type:  Val = 
 Key = Builder:  Val = Wally
-Key = Naval Architect:  Val = German Frers
-Key = Exterior Designers:  Val = German Frers
-Key = Interior Designer:  Val = Wally
-Key = Year:  Val = 2000
+Key = Naval_Architect:  Val = Farr Yacht Design
+Key = Exterior_Designers:  Val = Wally
+Key = Interior_Designer:  Val = Lazzarini Carl Pickering
+Key = Year:  Val = 2004
 Key = Flag:  Val = -
 Key = MCA:  Val = 
-Key = Class:  Val = A1
-Key = Hull NB:  Val = -
-Key = Hull Colour:  Val = -
-Key = Length Overall:  Val = 24.00m (78'8"ft)
-Key = Length at Waterline:  Val = -
-Key = Beam:  Val = 5.85m (19'2"ft)
-Key = Draft-min:  Val = 2.50m (8'2"ft)
-Key = Draft-max:  Val = 4.05m (13'3"ft)
-Key = Gross Tonnage:  Val = -
+Key = Class:  Val = -
+Key = Hull_NB:  Val = -
+Key = Hull_Colour:  Val = -
+Key = Length_Overall:  Val = 24.00m (78'8"ft)
+Key = Length_at_Waterline:  Val = -
+Key = Beam:  Val = 5.96m (19'6"ft)
+Key = Draft_min:  Val = -
+Key = Draft_max:  Val = 4.00m (13'1"ft)
+Key = Gross_Tonnage:  Val = -
 Key = Guests:  Val = 6
-Key = Cabins Total:  Val = 3
-Key = Cabins:  Val = 1 Master / 1 Double / 1 Twin /
-Key = Crew:  Val = 2
-Key = Hull Configuration:  Val = Lifting Keel
-Key = Hull Material:  Val = Composite
-Key = Superstructure:  Val = Composite
-Key = Deck Material:  Val = Teak
-Key = Decks NB:  Val = -
+Key = Cabins_Total:  Val = 3
+Key = Cabins:  Val = 1 Master / 2 Twin / 2 Pullman /
+Key = Crew:  Val = -
+Key = Hull_Configuration:  Val = -
+Key = Hull_Material:  Val = GRP
+Key = Superstructure:  Val = GRP
+Key = Deck_Material:  Val = Teak
+Key = Decks_NB:  Val = -
 Key = Quantity:  Val = 1
-Key = Fuel Type:  Val = Diesel
-Key = Manufacturer:  Val = Yanmar
-Key = Model:  Val = 4LH
-Key = Power:  Val = 180hp / 134kW
-Key = Total Power:  Val = 180hp / 134kW
-Key = Propulsion:  Val = Single Screw
-Key = Max Speed:  Val = 11.00 kts
-Key = Cruising Speed:  Val = 0.00 kts
+Key = Fuel_Type:  Val = Diesel
+Key = Manufacturer:  Val = Cummins
+Key = Model:  Val = -
+Key = Power:  Val = 250hp / 186kW
+Key = Total_Power:  Val = 250hp / 186kW
+Key = Propulsion:  Val = Single screw
+Key = Max_Speed:  Val = 10.50 kts
+Key = Cruising_Speed:  Val = 9.00 kts
 Key = Range:  Val = -
-Key = Fuel Capacity:  Val = 900.00 L / 197.97 USG
-Key = Water Capacity:  Val = 600.00 L / 131.98 USG
-Key = Generator:  Val = 
+Key = Fuel_Capacity:  Val = 2,000.00 L / 439.94 USG
+Key = Water_Capacity:  Val = 1,300.00 L / 285.96 USG
+Key = Generator:  Val = -
 Key = Stabilizers:  Val = -
 Key = Thrusters:  Val = -
 Key = Amenities:  Val = -
