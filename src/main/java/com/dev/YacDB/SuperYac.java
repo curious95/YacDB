@@ -15,6 +15,7 @@ public class SuperYac {
 	static HashSet<String> urlSet = new HashSet<String>();
 	static Map<String, String> objMap = new HashMap<String, String>();
 
+	@SuppressWarnings("static-access")
 	public static void startProcess() {
 
 		Ingestor ingestor = new Ingestor();
@@ -39,21 +40,39 @@ public class SuperYac {
 				
 				//Clearing the old object map
 				objMap.clear();
+				
 				// Yacht creator class instance
 				YchCreator ych = new YchCreator();
+				
 				// System.out.println(url.replace(".htm", "-specification.htm"));
 				ychParser(Jsoup.parse(
 						ingestor.ingest("https://www.superyachts.com" + url.replace(".htm", "-specification.htm"))));
+				
 				// System.out.println("\n\n\n\n\n ");
 				
 				
 				for (Map.Entry<String, String> entry : objMap.entrySet()) {
 					//System.out.println(entry.getKey() + "/" + entry.getValue());
 						
+					
+					// Switch case to initialize setters
+					switch(entry.getKey()) {
+					
+					case "name":
+						//System.out.println(entry.getValue());
+						ych.setName(entry.getValue());
+						break;
+					case "type":
+						ych.setType(entry.getValue());
+						break;
+					}
+					
 				}
 				
+				System.out.println(ych.getYchObj().toString());
 				
-				break;
+				
+				break; //break for limiting iterations during testing
 			}
 
 			
@@ -87,7 +106,7 @@ public class SuperYac {
 
 			if (item.text().contains(":")) {
 				keyVal = true;
-				key = item.text().replace(" (", "_").replace(")", "");
+				key = item.text().replace(" (", "_").replace(")", "").replace(":", "");
 				key = key.replace(" ", "_").toLowerCase();
 				if (key.equals("model")) {
 					key = "yac_model";

@@ -332,6 +332,10 @@ public class YchCreator {
 
 	public static JsonObject getYchObj() {
 
-		return null;
+		JsonObject jo = new JsonObject();
+		jo.addProperty("name", YchCreator.name);
+		jo.addProperty("type", YchCreator.type);
+		
+		return jo;
 	}
 }
