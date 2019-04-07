@@ -10,3 +10,6 @@ http://www.ngyi.com/charters/yacht-directory/ -- DATA NA
 http://www.boatinternational.com/yacht-market-intelligence -- PRO
 http://www.denisonyachtsales.com/crew/ -- works
 https://www.atlanticyachtandship.ru/en/ -- works
+
+
+/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[2]/ul/li[1]/table/tbody/tr/td[2]

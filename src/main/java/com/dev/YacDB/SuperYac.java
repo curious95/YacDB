@@ -28,7 +28,7 @@ public class SuperYac {
 		// Looping through pages
 		// https://www.superyachts.com/directory/completed_yachts.htm?page=2
 
-		for (int i = 1; i <= 1; i++) {
+		for (int i = 1; i <= range; i++) {
 
 			urlSet.clear();
 			String URL = "https://www.superyachts.com/directory/completed_yachts.htm?page=" + i;
@@ -213,6 +213,14 @@ public class SuperYac {
 					e.printStackTrace();
 				}
 
+			
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 				//break; // break for limiting iterations during testing
 			}
 			try {
