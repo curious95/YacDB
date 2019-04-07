@@ -6,7 +6,10 @@ public class YchDBInitializer {
 	public static void main(String args[]) {
 	
 		SuperYac SY = new SuperYac();
-		SY.startProcess();
+		//SY.startProcess();
+		
+		YacTo YT = new YacTo();
+		YT.startProcess();
 		
 	}
 		
