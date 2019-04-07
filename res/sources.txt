@@ -1,11 +1,11 @@
-yachtworld.com -- works
-yatco.com -- works
-www.superyachts.com -- works
+yachtworld.com -- works --Done
+yatco.com -- works -- Done
+www.superyachts.com -- works -- Done
 http://www.boatinternational.com -- PRO
 http://www.boatinternational.com/yacht-market-intelligence -- PRO
 http://www.superyachtindex.com -- DATA NA
-www.yachtcharterfleet.com -- works
-http://www.charterworld.com/ -- works
+www.yachtcharterfleet.com -- works -- Done
+http://www.charterworld.com/ -- works --Done
 http://www.ngyi.com/charters/yacht-directory/ -- DATA NA
 http://www.boatinternational.com/yacht-market-intelligence -- PRO
 http://www.denisonyachtsales.com/crew/ -- works
