@@ -1,7 +1,10 @@
 package com.dev.YacDB;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 
+import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -11,7 +14,14 @@ import org.openqa.selenium.By;
 public class YacTo {
 
 	static HashSet<String> urlSet = new HashSet<String>();
-	final static int range = 23; // Static number during the design phase
+	final static int limit = 23; // Static number during the design phase
+	
+	static String name, type, yac_model, sub_type, builder, naval_architect, exterior_designers, interior_designer,
+	year, flag, mca, class_, hull_nb, hull_colour, length_overall, length_at_waterline, beam, draft_min,
+	draft_max, gross_tonnage, guests, cabins_total, cabins, crew, hull_configuration, hull_material,
+	superstructure, deck_material, decks_nb, quantity, fuel_type, manufacturer, eng_model, power, total_power,
+	propulsion, max_speed, cruising_speed, range, fuel_capacity, water_capacity, generator, stabilizers,
+	thrusters, amenities;
 
 	public static void startProcess() {
 
@@ -34,12 +44,46 @@ public class YacTo {
 
 			for (String url : urlSet) {
 
-				// System.out.println("https://www.yatco.com" + url);
-				ingestor.ingest("https://www.superyachts.com" + url);
-				String year = ingestor.driver.findElement(By.cssSelector(
-						"body > div:nth-child(7) > div.profile-de > div > div.detail-content > div > div > div > div:nth-child(2) > div:nth-child(1) > ul > li:nth-child(5) > table > tbody > tr > td:nth-child(2)"))
-						.getText();
+				
+				YchCreator ych = new YchCreator();
+				
+				//System.out.println("https://www.yatco.com" + url);
+				ingestor.ingest("https://www.yatco.com" + url);
+				String year = ingestor.driver.findElement(By.xpath("//html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[1]/ul/li[5]/table/tbody/tr/td[2]")).getText();
+				//System.out.println(year);
+				
+				name = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/h1")).getText();
+				ych.setName(name);
+				
+				type = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+				ych.setType(type);
+				
+				
+				System.out.println(ych.getYchObj().toString());
+				
+			
+			
+			
+				// System.out.println(ych.getYchObj().toString());
 
+//				File file = new File("jsonfiles/" + "YacTo" + ".json");
+//				try {
+//					FileUtils.writeStringToFile(file, ych.getYchObj().toString() + "\n", true);
+//				} catch (IOException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//
+//			
+//				try {
+//					Thread.sleep(2000);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+				
+				//break; // break for limiting iterations during testing
+			
 			}
 
 			// sleep function to avoid load
