@@ -146,7 +146,91 @@ public class YacTo {
 					// TODO: handle exception
 				}
 				
+				try {
+					fuel_capacity = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setFuel_capacity(fuel_capacity);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 				
+				try {
+					fuel_capacity = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setFuel_capacity(fuel_capacity);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					gross_tonnage = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setGross_tonnage(gross_tonnage);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					hull_colour = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setHull_colour(hull_colour);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				
+				try {
+					hull_material = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setHull_material(hull_material);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					hull_configuration = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setHull_configuration(hull_configuration);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					hull_nb = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setHull_nb(hull_nb);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				
+				try {
+					interior_designer = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setInterior_designer(interior_designer);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					exterior_designers = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setExterior_designers(exterior_designers);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					eng_model = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setEng_model(eng_model);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					fuel_type = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setFuel_type(fuel_type);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					quantity = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setQuantity(quantity);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 				
 				
 				System.out.println(ych.getYchObj().toString());

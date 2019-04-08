@@ -1,15 +1,13 @@
 yachtworld.com -- works --Done
 yatco.com -- works -- Done
 www.superyachts.com -- works -- Done
-http://www.boatinternational.com -- PRO
-http://www.boatinternational.com/yacht-market-intelligence -- PRO
-http://www.superyachtindex.com -- DATA NA
 www.yachtcharterfleet.com -- works -- Done
 http://www.charterworld.com/ -- works --Done
-http://www.ngyi.com/charters/yacht-directory/ -- DATA NA
-http://www.boatinternational.com/yacht-market-intelligence -- PRO
-http://www.denisonyachtsales.com/crew/ -- works
-https://www.atlanticyachtandship.ru/en/ -- works
+http://www.denisonyachtsales.com/crew/ -- works --Done
+https://www.atlanticyachtandship.ru/en/ -- works --Done
 
 
-/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[2]/ul/li[1]/table/tbody/tr/td[2]
+http://www.boatinternational.com -- PRO Subscription needed
+http://www.boatinternational.com/yacht-market-intelligence -- PRO Subscription needed
+http://www.superyachtindex.com -- DATA Not Available
+http://www.ngyi.com/charters/yacht-directory/ -- DATA Not Available
