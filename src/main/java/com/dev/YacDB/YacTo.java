@@ -20,12 +20,15 @@ public class YacTo {
 	propulsion, max_speed, cruising_speed, range, fuel_capacity, water_capacity, generator, stabilizers,
 	thrusters, amenities;
 
+	@SuppressWarnings("static-access")
 	public static void startProcess() {
 
 		Ingestor ingestor = new Ingestor();
 		ingestor.initDriver(); // Driver instance begins here
 
 		for (int i = 0; i < 1; i++) {
+			
+			urlSet.clear();
 			String URL = "https://www.yatco.com/search?pg=" + i
 					+ "&builder=&loa1=100&loa2=&lengthUnit=1&countryID=0&price1=&price2=&currency=USD&year1=&year2=&typeID=0&vesselName=&NR=3";
 
@@ -44,16 +47,106 @@ public class YacTo {
 				
 				YchCreator ych = new YchCreator();
 				
-				//System.out.println("https://www.yatco.com" + url);
+				System.out.println("Yatc0" + url);
 				ingestor.ingest("https://www.yatco.com" + url);
-				String year = ingestor.driver.findElement(By.xpath("//html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[1]/ul/li[5]/table/tbody/tr/td[2]")).getText();
-				//System.out.println(year);
 				
-				name = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/h1")).getText();
-				ych.setName(name);
+				try {
+					name = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/h1")).getText();
+					ych.setName(name);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 				
-				type = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
-				ych.setType(type);
+				
+				try {
+					type = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setType(type);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				
+				try {
+					yac_model = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[1]/ul/li[3]/table/tbody/tr/td[2]")).getText();
+					ych.setYac_model(yac_model);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					year = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[1]/ul/li[5]/table/tbody/tr/td[2]")).getText();
+					ych.setYear(year);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				
+				try {
+					flag = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[1]/div[2]/ul/li[1]/table/tbody/tr/td[2]")).getText();
+					ych.setFlag(flag);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				
+				try {
+					beam = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[4]/table/tbody/tr/td[2]")).getText();
+					ych.setBeam(beam);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				
+				try {
+					draft_max = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[2]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setDraft_max(draft_max);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					draft_min = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[2]/ul/li[1]/table/tbody/tr/td[2]")).getText();
+					ych.setDraft_min(draft_min);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					length_overall = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[1]/table/tbody/tr/td[2]")).getText();
+					ych.setLength_overall(length_overall);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					length_at_waterline = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setLength_at_waterline(length_at_waterline);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					cruising_speed = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setCruising_speed(cruising_speed);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					max_speed = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setMax_speed(max_speed);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					range = ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[2]/table/tbody/tr/td[2]")).getText();
+					ych.setRange(range);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				
 				
 				
 				System.out.println(ych.getYchObj().toString());
