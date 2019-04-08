@@ -101,6 +101,10 @@ public class YacTo {
 					// TODO: handle exception
 				}
 
+				///////////////////////////////////// clicker code
+				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[2]"))
+						.click();
+
 				try {
 					beam = ingestor.driver.findElement(By.xpath(
 							"/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[1]/ul/li[4]/table/tbody/tr/td[2]"))
@@ -146,6 +150,10 @@ public class YacTo {
 					// TODO: handle exception
 				}
 
+				///////////////////////////////////// clicker code
+				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[3]"))
+						.click();
+
 				try {
 					cruising_speed = ingestor.driver.findElement(By.xpath(
 							"/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[3]/div[1]/ul/li[1]/table/tbody/tr/td[2]"))
@@ -190,6 +198,10 @@ public class YacTo {
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
+
+				///////////////////////////////////// clicker code
+				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[5]"))
+						.click();
 
 				try {
 					hull_colour = ingestor.driver.findElement(By.xpath(
@@ -263,11 +275,24 @@ public class YacTo {
 					// TODO: handle exception
 				}
 
+				///////////////////////////////////// clicker code
+				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[6]"))
+						.click();
+
 				try {
 					eng_model = ingestor.driver.findElement(By.xpath(
 							"/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[6]/div[1]/ul/li[2]/table/tbody/tr/td[2]"))
 							.getText();
 					ych.setEng_model(eng_model);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+				try {
+					manufacturer = ingestor.driver.findElement(By.xpath(
+							"/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[6]/div[1]/ul/li[1]/table/tbody/tr/td[2]"))
+							.getText();
+					ych.setManufacturer(manufacturer);
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -289,6 +314,10 @@ public class YacTo {
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
+
+				///////////////////////////////////// clicker code
+				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[4]"))
+						.click();
 
 				try {
 					guests = ingestor.driver.findElement(By.xpath(
