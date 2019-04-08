@@ -1,17 +1,20 @@
 package com.dev.YacDB;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class YacChaFle {
 
 	static HashSet<String> urlSet = new HashSet<String>();
-	final static int limit = 23; // Static number during the design phase
+	final static int limit = 135; // Static number during the design phase
 
 	static String name, type, yac_model, sub_type, builder, naval_architect, exterior_designers, interior_designer,
 			year, flag, mca, class_, hull_nb, hull_colour, length_overall, length_at_waterline, beam, draft_min,
@@ -20,12 +23,13 @@ public class YacChaFle {
 			propulsion, max_speed, cruising_speed, range, fuel_capacity, water_capacity, generator, stabilizers,
 			thrusters, amenities;
 
+	@SuppressWarnings("static-access")
 	public static void startProcess() {
 
 		Ingestor ingestor = new Ingestor();
 		ingestor.initDriver(); // Driver instance begins here
 
-		for (int i = 1; i < 3; i++) {
+		for (int i = 1; i < limit; i++) {
 			String URL = "https://www.yachtcharterfleet.com/yacht-charter.htm?price_from=0&price_to=100000000&currency_code_id=3&length_from=100&length_to=328&length_id=2&guests_from=0&guests_to=40&vessel_name=&vessel_name_id=&corporate_charter=&vessel_type_id=&vessel_builder_id_list=&vessel_model_id=&season_id_list=&vessel_builder_id=&extended_name=&search=&view=&length_to_max=100&price_to_max=1000000&year_to_max=2019&display_resource_type=&per_page=12&order_by=&licence_id_list=&no_licence=&mode=&id=&page="+i;
 
 			Document doc = Jsoup.parse(ingestor.ingest(URL));
@@ -35,27 +39,107 @@ public class YacChaFle {
 			for (Element item : listItems) {
 
 				//System.out.println(item.attr("href"));
-				urlSet.add(item.attr("href"));
+			
+				String tempUrl = item.attr("href");
+				
+			
+				if(tempUrl.contains("luxury")) {
+					urlSet.add(tempUrl);
+				}
+				
 			}
 
+			
 			for (String url : urlSet) {
 
 				YchCreator ych = new YchCreator();
 
-				// System.out.println("https://www.yatco.com" + url);
+				System.out.println("YacCharFlee" + url);
 				ingestor.ingest("https://www.yachtcharterfleet.com" + url);
 				
 				name = ingestor.driver.findElement(By.xpath("/html/body/div[5]/div/div/div/div[3]/div/div/div[2]/div[1]/p[1]/em")).getText();
 				ych.setName(name);
 
-				type = ingestor.driver.findElement(By.xpath(
+				year = ingestor.driver.findElement(By.xpath(
 						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[8]/td[2]"))
 						.getText();
-				ych.setType(type);
+				ych.setYear(year);
+				
+				length_overall = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[1]/td[2]"))
+						.getText();
+				ych.setLength_overall(length_overall);
+				
+				beam = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[2]/td[2]"))
+						.getText();
+				ych.setBeam(beam);
+				
+				draft_max = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[3]/td[2]"))
+						.getText();
+				ych.setDraft_max(draft_max);
+				
+				gross_tonnage = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[4]/td[2]"))
+						.getText();
+				ych.setGross_tonnage(gross_tonnage);
+				
+				cruising_speed = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[5]/td[2]"))
+						.getText();
+				ych.setCruising_speed(cruising_speed);
+				
+				builder = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[6]/td[2]"))
+						.getText();
+				ych.setBuilder(builder);
+				
+				yac_model = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[7]/td[2]"))
+						.getText();
+				ych.setYac_model(yac_model);
+				
+				exterior_designers = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[9]/td[2]"))
+						.getText();
+				ych.setExterior_designers(exterior_designers);
+				
+				interior_designer = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[2]/table/tbody/tr[10]/td[2]"))
+						.getText();
+				ych.setInterior_designer(interior_designer);
+				
+				
+				guests = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/ul/li[1]/p[2]"))
+						.getText();
+				ych.setGuests(guests);
+				
+				
+				cabins_total = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/ul/li[2]/p[2]"))
+						.getText();
+				ych.setCabins_total(cabins_total);
+				
+				
+				crew = ingestor.driver.findElement(By.xpath(
+						"/html/body/div[5]/div/div/div/div[3]/div/div/div[5]/div[2]/div[1]/div[1]/div[1]/div[1]/ul/li[3]/p[2]"))
+						.getText();
+				ych.setCrew(crew);
+				
+								
+				List<WebElement> elements = ingestor.driver.findElements(By.className("amenitiesList"));
+				
+				amenities = "";
+				for(WebElement ele : elements){
+				    amenities += ele.getText().replace("\n", " ");
+				}
+				ych.setAmenities(amenities);
+				
+				
 
 				System.out.println(ych.getYchObj().toString());
-
-				// System.out.println(ych.getYchObj().toString());
 
 //				File file = new File("jsonfiles/" + "YacTo" + ".json");
 //				try {
@@ -73,7 +157,7 @@ public class YacChaFle {
 //					e.printStackTrace();
 //				}
 
-				// break; // break for limiting iterations during testing
+				 //break; // break for limiting iterations during testing
 
 			}
 
