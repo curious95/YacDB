@@ -32,61 +32,181 @@ public class ChaWor {
 
 		for (int i = 1; i < limit; i++) {
 			urlSet.clear();
-			String URL = "https://www.charterworld.com/index.html?sub=yacht-results&location_filter=&prices_filter=&yachttype_filter=6&sort=&page="+i;
+			String URL = "https://www.charterworld.com/index.html?sub=yacht-results&location_filter=&prices_filter=&yachttype_filter=6&sort=&page="
+					+ i;
 
 			Document doc = Jsoup.parse(ingestor.ingest(URL));
 
 			Elements listItems = doc.getElementsByClass("caption").select("a");
 
 			for (Element item : listItems) {
-	
 
 				String tempUrl = item.attr("href");
 
-				if(tempUrl.contains("https://www.charterworld.com/index.html?sub=yacht-charter")) {
-					//System.out.println(item.attr("href"));
+				if (tempUrl.contains("https://www.charterworld.com/index.html?sub=yacht-charter")) {
+					// System.out.println(item.attr("href"));
 					urlSet.add(tempUrl);
 				}
-					
 
 			}
-			
 
 			for (String url : urlSet) {
 
 				YchCreator ych = new YchCreator();
 
 				System.out.println("Charter World  :  " + url);
+
+				
 				
 				Document doc2 = Jsoup.parse(ingestor.ingest(url));
-				//ingestor.ingest(url);
+				// ingestor.ingest(url);
+
+				ych.setName(doc2.getElementById("page-text").getElementsByTag("h1").get(0).getElementsByTag("span").get(0).text().trim());
 				
 				Elements listItems2 = doc2.getElementsByClass("specifications").select("tr");
 				
 				for (Element item : listItems2) {
-				
-					if(item.text().contains("Type")) {
-						
-						try{
-							String []splitStr = item.text().split(":");
-							ych.setYear(splitStr[splitStr.length-1].replaceAll("[A-z]", "").replace("/", "").replace(" ", ""));
-							ych.setType(splitStr[splitStr.length-1].replaceAll("\\d", "").replace("/", ""));
-						}catch (Exception e) {
+
+					if (item.text().contains("Type")) {
+
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setYear(splitStr[splitStr.length - 1].replaceAll("[A-z]", "").replace("/", "")
+									.replace(" ", "").replace("&", "").trim());
+							ych.setType(splitStr[splitStr.length - 1].replaceAll("\\d", "").replace("/", "").trim());
+						} catch (Exception e) {
 							// TODO: handle exception
 							e.printStackTrace();
-						}		
-						
+						}
+
+					}
+
+					if (item.text().contains("Beam")) {
+
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setBeam(splitStr[splitStr.length - 1].trim());
+							
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
+
 					}
 					
 					
-					//System.out.println("Item   "+item.text());
-				}
-				
-				System.out.println(ych.getYchObj().toString());
-				
-				System.exit(1);
+					if (item.text().contains("L.O.A")) {
 
-				
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setLength_overall(splitStr[splitStr.length - 1].trim());
+							
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
+
+					}
+					
+					if (item.text().contains("Crew:")) {
+
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setCrew(splitStr[splitStr.length - 1].trim());
+							
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
+
+					}
+					
+					if (item.text().contains("Cabins:")) {
+
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setCabins(splitStr[splitStr.length - 1].trim());
+							
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
+
+					}
+					
+					if (item.text().contains("Guests:")) {
+
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setGuests(splitStr[splitStr.length - 1].trim());
+							
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
+
+					}
+					
+					if (item.text().contains("Builder")) {
+
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setBuilder(splitStr[splitStr.length - 1].trim());
+							ych.setExterior_designers(splitStr[splitStr.length - 1].trim());
+							ych.setInterior_designer(splitStr[splitStr.length - 1].trim());
+							
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
+
+					}
+					
+					
+					if (item.text().contains("Max Speed")) {
+
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setMax_speed(splitStr[splitStr.length - 1].trim());
+							
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
+
+					}
+					
+					if (item.text().contains("Cruise Speed")) {
+
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setCruising_speed(splitStr[splitStr.length - 1].trim());
+							
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
+
+					}
+					
+					if (item.text().contains("Engines")) {
+
+						try {
+							String[] splitStr = item.text().split(":");
+							ych.setEng_model(splitStr[splitStr.length - 1].trim());							
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
+
+					}
+
+					// System.out.println("Item "+item.text());
+				}
+
+				System.out.println(ych.getYchObj().toString());
+
+				//System.exit(1);
 
 				File file = new File("jsonfiles/" + "CharWorld" + ".json");
 				try {
