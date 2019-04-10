@@ -51,10 +51,10 @@ public class YacTo {
 
 				System.out.println("Yatc0" + url);
 				ingestor.ingest("https://www.yatco.com" + url);
-				
+
 				try {
 					Thread.sleep(3000);
-				}catch (Exception e) {
+				} catch (Exception e) {
 					// TODO: handle exception
 				}
 
@@ -110,12 +110,15 @@ public class YacTo {
 					// TODO: handle exception
 				}
 
-				
-				
-				///////////////////////////////////// clicker code
-				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[2]"))
-						.click();
-				
+				try {
+
+					///////////////////////////////////// clicker code
+					ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[2]"))
+							.click();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e1) {
@@ -136,7 +139,7 @@ public class YacTo {
 					draft_max = ingestor.driver.findElement(By.xpath(
 							"/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[2]/ul/li[2]/table/tbody/tr/td[2]"))
 							.getText();
-					System.out.println("Draftmx     "+draft_max);
+					System.out.println("Draftmx     " + draft_max);
 					ych.setDraft_max(draft_max);
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -147,7 +150,7 @@ public class YacTo {
 					draft_min = ingestor.driver.findElement(By.xpath(
 							"/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[2]/div[2]/ul/li[1]/table/tbody/tr/td[2]"))
 							.getText();
-					System.out.println("Draftmx     "+draft_min);
+					System.out.println("Draftmx     " + draft_min);
 					ych.setDraft_min(draft_min);
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -171,11 +174,14 @@ public class YacTo {
 					// TODO: handle exception
 				}
 
-				
-				///////////////////////////////////// clicker code
-				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[3]"))
-						.click();
-				
+				try {
+					///////////////////////////////////// clicker code
+					ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[3]"))
+							.click();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e1) {
@@ -228,11 +234,14 @@ public class YacTo {
 					// TODO: handle exception
 				}
 
-				
-				///////////////////////////////////// clicker code
-				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[5]"))
-						.click();
-				
+				try {
+					///////////////////////////////////// clicker code
+					ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[5]"))
+							.click();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e1) {
@@ -312,11 +321,14 @@ public class YacTo {
 					// TODO: handle exception
 				}
 
-				
-				
-				///////////////////////////////////// clicker code
-				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[6]"))
-						.click();
+				try {
+					///////////////////////////////////// clicker code
+					ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[6]"))
+							.click();
+
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 
 				try {
 					Thread.sleep(5000);
@@ -324,7 +336,7 @@ public class YacTo {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
+
 				try {
 					eng_model = ingestor.driver.findElement(By.xpath(
 							"/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[6]/div[1]/ul/li[2]/table/tbody/tr/td[2]"))
@@ -333,7 +345,7 @@ public class YacTo {
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
-				
+
 				try {
 					manufacturer = ingestor.driver.findElement(By.xpath(
 							"/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[6]/div[1]/ul/li[1]/table/tbody/tr/td[2]"))
@@ -361,19 +373,21 @@ public class YacTo {
 					// TODO: handle exception
 				}
 
-				
-				///////////////////////////////////// clicker code
-				ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[4]"))
-						.click();
+				try {
+					///////////////////////////////////// clicker code
+					ingestor.driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[3]/div/div/div/ul/li[4]"))
+							.click();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 
-				
 				try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
+
 				try {
 					guests = ingestor.driver.findElement(By.xpath(
 							"/html/body/div[4]/div[2]/div/div[3]/div/div/div/div[4]/div[1]/ul/li[3]/table/tbody/tr/td[2]"))
@@ -410,7 +424,6 @@ public class YacTo {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
 
 			}
 
