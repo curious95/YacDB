@@ -9,10 +9,13 @@ public class YchDBInitializer {
 		//SY.startProcess();
 		
 		YacTo YT = new YacTo();
-		YT.startProcess();
+		//YT.startProcess();
 		
 		YacChaFle YCF = new YacChaFle();
 		//YCF.startProcess();
+		
+		ChaWor CW = new ChaWor();
+		CW.startProcess();
 		
 	}
 		
