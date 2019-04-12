@@ -6,6 +6,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.By;
 
 public class AtlYac {
 
@@ -52,7 +53,7 @@ public class AtlYac {
 
 				//System.out.println("Alt YAC  :  " + url);
 
-				// ingestor.ingest(url);
+				ingestor.ingest(url);
 				Document specDocs = Jsoup.parse(ingestor.ingest(url));
 				Elements specItems = specDocs.getElementsByClass("specifications-text").select("dl");
 				Elements specItemsAdd = specDocs.getElementsByClass("info-columns").select("dl");
@@ -61,11 +62,28 @@ public class AtlYac {
 				}
 				
 				for (Element item : specItemsAdd) {
-					System.out.println(item.text().substring(0, item.text().indexOf(":")).trim());
+					//System.out.println(item.text().substring(0, item.text().indexOf(":")).trim());
+					String Key = item.text().substring(0, item.text().indexOf(":")).trim();
+					String Val = item.text().replace("Key", "").replace(":", "").trim();
+				
+					System.out.println(Key+"   "+Val);
+					
+					
+					
 				}
 				
+				try {
+					name = ingestor.driver.findElement(By.xpath("//*[@id=\"main\"]/div[3]/div/div[2]/div[1]/div[2]/div[1]/div[1]/div/strong/span")).getText();
+					ych.setName(name);
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
 
+			
+				//System.out.println(ych.getYchObj());
 			}
+			
+			
 			
 			System.exit(1);
 
