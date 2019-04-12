@@ -18,7 +18,7 @@ public class YchDBInitializer {
 		//CW.startProcess();
 		
 		AtlYac AY = new AtlYac();
-		AY.startProcess();
+		//AY.startProcess();
 		
 	}
 		
