@@ -1,7 +1,10 @@
 package com.dev.YacDB;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 
+import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -11,7 +14,7 @@ import org.openqa.selenium.By;
 public class AtlYac {
 
 	static HashSet<String> urlSet = new HashSet<String>();
-	final static int limit = 6; // Static number during the design phase
+	final static int limit = 10; // Static number during the design phase
 
 	static String name, type, yac_model, sub_type, builder, naval_architect, exterior_designers, interior_designer,
 			year, flag, mca, class_, hull_nb, hull_colour, length_overall, length_at_waterline, beam, draft_min,
@@ -29,7 +32,7 @@ public class AtlYac {
 
 		for (int i = 0; i < limit; i++) {
 			urlSet.clear();
-			String URL = "https://www.atlanticyachtandship.ru/en/catalog/?search=1&LOARange=100%2C&Measure=feet&includeType%5B0%5D=motor&includeType%5B1%5D=sail&PageIndex"
+			String URL = "https://www.atlanticyachtandship.ru/en/catalog/?search=1&LOARange=80%2C&Measure=feet&includeType%5B0%5D=motor&includeType%5B1%5D=sail&PageIndex"
 					+ i;
 
 			Document doc = Jsoup.parse(ingestor.ingest(URL));
@@ -41,7 +44,7 @@ public class AtlYac {
 				String tempUrl = item.attr("href");
 
 				urlSet.add(tempUrl);
-				//System.out.println(tempUrl);
+				// System.out.println(tempUrl);
 
 			}
 
@@ -60,15 +63,16 @@ public class AtlYac {
 				for (Element item : specItems) {
 					specItemsAdd.add(item);
 				}
-				
+
 				for (Element item : specItemsAdd) {
-					//System.out.println(item.text().substring(0, item.text().indexOf(":")).trim());
+					// System.out.println(item.text().substring(0,
+					// item.text().indexOf(":")).trim());
 					String key = item.text().substring(0, item.text().indexOf(":")).trim();
 					String val = item.text().replace(key, "").replace(":", "").trim();
-					key= key.toLowerCase().replace(" ", "_");
-				
-					//System.out.println(key+"   "+val);
-					
+					key = key.toLowerCase().replace(" ", "_");
+
+					// System.out.println(key+" "+val);
+
 					switch (key) {
 
 					case "category":
@@ -207,25 +211,47 @@ public class AtlYac {
 						ych.setAmenities(val);
 						break;
 					}
-					
+
 				}
-				
+
 				try {
-					name = ingestor.driver.findElement(By.xpath("//*[@id=\"main\"]/div[3]/div/div[2]/div[1]/div[2]/div[1]/div[1]/div/strong/span")).getText();
+					name = ingestor.driver
+							.findElement(By.xpath(
+									"//*[@id=\"main\"]/div[3]/div/div[2]/div[1]/div[2]/div[1]/div[1]/div/strong/span"))
+							.getText();
 					ych.setName(name);
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
 
-			
-				System.out.println(ych.getYchObj());
-			}
-			
-			
-			
-			System.exit(1);
+				File file = new File("jsonfiles/" + "AlyYac" + ".json");
+				try {
+					FileUtils.writeStringToFile(file, ych.getYchObj().toString() + "\n", true);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+
+			// sleep function to avoid load
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			// System.out.println(ych.getYchObj());
 		}
+
 	}
 
 }
