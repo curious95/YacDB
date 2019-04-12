@@ -19,8 +19,7 @@ public class AtlYac {
 			propulsion, max_speed, cruising_speed, range, fuel_capacity, water_capacity, generator, stabilizers,
 			thrusters, amenities;
 	//
-	
-	
+
 	@SuppressWarnings("static-access")
 	public static void startProcess() {
 
@@ -40,19 +39,37 @@ public class AtlYac {
 
 				String tempUrl = item.attr("href");
 
-				System.out.println(tempUrl);
+				urlSet.add(tempUrl);
+				//System.out.println(tempUrl);
 
 			}
-			
-			System.exit(1);
+
+			// System.exit(1);
 
 			for (String url : urlSet) {
 
 				YchCreator ych = new YchCreator();
 
-				System.out.println("Charter World  :  " + url);
+				//System.out.println("Alt YAC  :  " + url);
+
+				// ingestor.ingest(url);
+				Document specDocs = Jsoup.parse(ingestor.ingest(url));
+				Elements specItems = specDocs.getElementsByClass("specifications-text").select("dl");
+				Elements specItemsAdd = specDocs.getElementsByClass("info-columns").select("dl");
+				for (Element item : specItems) {
+					specItemsAdd.add(item);
+				}
+				
+				for (Element item : specItemsAdd) {
+					System.out.println(item.text().substring(0, item.text().indexOf(":")).trim());
+				}
+				
+
 			}
+			
+			System.exit(1);
+
 		}
 	}
-	
+
 }
