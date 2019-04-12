@@ -15,7 +15,10 @@ public class YchDBInitializer {
 		//YCF.startProcess();
 		
 		ChaWor CW = new ChaWor();
-		CW.startProcess();
+		//CW.startProcess();
+		
+		AtlYac AY = new AtlYac();
+		AY.startProcess();
 		
 	}
 		
