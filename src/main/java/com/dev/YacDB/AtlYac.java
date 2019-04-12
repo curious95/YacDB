@@ -51,7 +51,7 @@ public class AtlYac {
 
 				YchCreator ych = new YchCreator();
 
-				//System.out.println("Alt YAC  :  " + url);
+				System.out.println("Alt YAC  :  " + url);
 
 				ingestor.ingest(url);
 				Document specDocs = Jsoup.parse(ingestor.ingest(url));
@@ -63,12 +63,150 @@ public class AtlYac {
 				
 				for (Element item : specItemsAdd) {
 					//System.out.println(item.text().substring(0, item.text().indexOf(":")).trim());
-					String Key = item.text().substring(0, item.text().indexOf(":")).trim();
-					String Val = item.text().replace("Key", "").replace(":", "").trim();
+					String key = item.text().substring(0, item.text().indexOf(":")).trim();
+					String val = item.text().replace(key, "").replace(":", "").trim();
+					key= key.toLowerCase().replace(" ", "_");
 				
-					System.out.println(Key+"   "+Val);
+					//System.out.println(key+"   "+val);
 					
-					
+					switch (key) {
+
+					case "category":
+						ych.setType(val);
+						break;
+					case "yac_model":
+						ych.setYac_model(val);
+						break;
+					case "sub_category":
+						ych.setSub_type(val);
+						break;
+					case "builder":
+						ych.setBuilder(val);
+						break;
+					case "hull_designer":
+						ych.setNaval_architect(val);
+						break;
+					case "exterior_designer":
+						ych.setExterior_designers(val);
+						break;
+					case "interior_designer":
+						ych.setInterior_designer(val);
+						break;
+					case "year_built":
+						ych.setYear(val);
+						break;
+					case "country":
+						ych.setFlag(val);
+						break;
+					case "mca":
+						ych.setMca(val);
+						break;
+					case "class_":
+						ych.setClass_(val);
+						break;
+					case "hull_nb":
+						ych.setHull_nb(val);
+						break;
+					case "hull_color":
+						ych.setHull_colour(val);
+						break;
+					case "loa":
+						ych.setLength_overall(val);
+						break;
+					case "lwl":
+						ych.setLength_at_waterline(val);
+						break;
+					case "beam":
+						ych.setBeam(val);
+						break;
+					case "min_draft":
+						ych.setDraft_min(val);
+						break;
+					case "max_draft":
+						ych.setDraft_max(val);
+						break;
+					case "draft":
+						ych.setDraft_max(val);
+						break;
+					case "gross_tonnage":
+						ych.setGross_tonnage(val);
+						break;
+					case "sleeps":
+						ych.setGuests(val);
+						break;
+					case "cabins_total":
+						ych.setCabins_total(val);
+						break;
+					case "cabins":
+						ych.setCabins(val);
+						break;
+					case "crew_sleeps":
+						ych.setCrew(val);
+						break;
+					case "hull_configuration":
+						ych.setHull_configuration(val);
+						break;
+					case "hull_finish":
+						ych.setHull_material(val);
+						break;
+					case "superstructure":
+						ych.setSuperstructure(val);
+						break;
+					case "deck_material":
+						ych.setDeck_material(val);
+						break;
+					case "decks_nb":
+						ych.setDecks_nb(val);
+						break;
+					case "engines":
+						ych.setQuantity(val);
+						break;
+					case "fuel_type":
+						ych.setFuel_type(val);
+						break;
+					case "manufacturer":
+						ych.setManufacturer(val);
+						break;
+					case "model":
+						ych.setEng_model(val);
+						break;
+					case "power":
+						ych.setPower(val);
+						break;
+					case "total_power":
+						ych.setTotal_power(val);
+						break;
+					case "propulsion":
+						ych.setPropulsion(val);
+						break;
+					case "max_speed":
+						ych.setMax_speed(val);
+						break;
+					case "cruise_speed":
+						ych.setCruising_speed(val);
+						break;
+					case "range":
+						ych.setRange(val);
+						break;
+					case "fuel_capacity":
+						ych.setFuel_capacity(val);
+						break;
+					case "water_capacity":
+						ych.setWater_capacity(val);
+						break;
+					case "generator":
+						ych.setGenerator(val);
+						break;
+					case "stabilizers":
+						ych.setStabilizers(val);
+						break;
+					case "thrusters":
+						ych.setThrusters(val);
+						break;
+					case "amenities":
+						ych.setAmenities(val);
+						break;
+					}
 					
 				}
 				
@@ -80,7 +218,7 @@ public class AtlYac {
 				}
 
 			
-				//System.out.println(ych.getYchObj());
+				System.out.println(ych.getYchObj());
 			}
 			
 			
