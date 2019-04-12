@@ -20,6 +20,9 @@ public class YchDBInitializer {
 		AtlYac AY = new AtlYac();
 		//AY.startProcess();
 		
+		YacWor YW = new YacWor();
+		YW.startProcess();
+		
 	}
 		
 }

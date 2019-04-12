@@ -1,11 +1,7 @@
 package com.dev.YacDB;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.HashSet;
-import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 public class YacWor {
 	static HashSet<String> urlSet = new HashSet<String>();
-	final static int limit = 135; // Static number during the design phase
+	final static int limit = 568; // Static number during the design phase
 
 	static String name, type, yac_model, sub_type, builder, naval_architect, exterior_designers, interior_designer,
 			year, flag, mca, class_, hull_nb, hull_colour, length_overall, length_at_waterline, beam, draft_min,
@@ -23,6 +19,7 @@ public class YacWor {
 			superstructure, deck_material, decks_nb, quantity, fuel_type, manufacturer, eng_model, power, total_power,
 			propulsion, max_speed, cruising_speed, range, fuel_capacity, water_capacity, generator, stabilizers,
 			thrusters, amenities;
+	static int ctr = 0;
 
 	@SuppressWarnings("static-access")
 	public static void startProcess() {
@@ -30,59 +27,79 @@ public class YacWor {
 		Ingestor ingestor = new Ingestor();
 		ingestor.initDriver(); // Driver instance begins here
 
-		for (int i = 1; i < limit; i++) {
+		for (int i = 1; i < limit; i += 50) {
 			urlSet.clear();
-			String URL = "https://www.yachtcharterfleet.com/yacht-charter.htm?price_from=0&price_to=100000000&currency_code_id=3&length_from=100&length_to=328&length_id=2&guests_from=0&guests_to=40&vessel_name=&vessel_name_id=&corporate_charter=&vessel_type_id=&vessel_builder_id_list=&vessel_model_id=&season_id_list=&vessel_builder_id=&extended_name=&search=&view=&length_to_max=100&price_to_max=1000000&year_to_max=2019&display_resource_type=&per_page=12&order_by=&licence_id_list=&no_licence=&mode=&id=&page="
+			String URL = "https://www.yachtworld.co.uk/core/listing/cache/searchResults.jsp?slim=quick&sm=3&currencyid=1005&searchtype=homepage&Ntk=boatsUK&luom=126&toLength=9999&N=4002&cit=true&fromLength=100&type=%28Power%29&No="
 					+ i;
 
 			Document doc = Jsoup.parse(ingestor.ingest(URL));
 
-			Elements listItems = doc.getElementsByClass("searchImageLink").select("a");
+			Elements listItems = doc.getElementsByClass("make-model").select("a");
 
 			for (Element item : listItems) {
 
 				// System.out.println(item.attr("href"));
 
 				String tempUrl = item.attr("href");
-
-				if (tempUrl.contains("luxury")) {
-					urlSet.add(tempUrl);
-				}
-
+				urlSet.add(tempUrl);
 			}
 
+			// System.exit(1);
+
 			for (String url : urlSet) {
-				
-
-				YchCreator ych = new YchCreator();
-
-				System.out.println("YacCharFlee" + url);
-				ingestor.ingest("https://www.yachtcharterfleet.com" + url);
-			
-				// System.out.println(ych.getYchObj().toString());
-
-				File file = new File("jsonfiles/" + "YacChaFle" + ".json");
-				try {
-					FileUtils.writeStringToFile(file, ych.getYchObj().toString() + "\n", true);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 
 				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+
+					YchCreator ych = new YchCreator();
+
+					System.out.println(ctr + "   YacWor" + url);
+					ingestor.ingest(url);
+
+					// ingestor.driver.findElements(By.className("firstColumn"));
+
+					try {
+						Thread.sleep(2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					// System.out.println(specDoc_1.getElementsByClass("firstColumn").get(0));
+
+					for (WebElement item : ingestor.driver.findElements(By.className("firstColumn"))) {
+						System.out.println(item.getText());
+					}
+					for (WebElement item : ingestor.driver.findElements(By.className("secondColumn"))) {
+						System.out.println(item.getText());
+					}
+
+					// firstColumn
+
+//				File file = new File("jsonfiles/" + "YacChaFle" + ".json");
+//				try {
+//					FileUtils.writeStringToFile(file, ych.getYchObj().toString() + "\n", true);
+//				} catch (IOException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//
+//				try {
+//					Thread.sleep(2000);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+
+					// break; // break for limiting iterations during testing
+
+				} catch (Exception e) {
+					// TODO: handle exception
 				}
-
-				// break; // break for limiting iterations during testing
-
 			}
 
 			// sleep function to avoid load
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
