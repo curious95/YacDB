@@ -67,11 +67,35 @@ public class YacWor {
 					// System.out.println(specDoc_1.getElementsByClass("firstColumn").get(0));
 
 					for (WebElement item : ingestor.driver.findElements(By.className("firstColumn"))) {
-						System.out.println(item.getText());
+						//System.out.println(item.getText());
 					}
 					for (WebElement item : ingestor.driver.findElements(By.className("secondColumn"))) {
+						//System.out.println(item.getText());
+					}
+
+					try {
+
+						///////////////////////////////////// clicker code
+						ingestor.driver
+								.findElement(By.className("fullspecstab"))
+								.click();
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+					for (WebElement item : ingestor.driver.findElements(By.className("fullspecs"))) {
 						System.out.println(item.getText());
 					}
+
+					// fullspecs
 
 					// firstColumn
 

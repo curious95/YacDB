@@ -1,5 +1,7 @@
 package com.dev.YacDB;
 
+import java.io.IOException;
+
 public class YchDBInitializer {
 
 	
@@ -21,7 +23,15 @@ public class YchDBInitializer {
 		//AY.startProcess();
 		
 		YacWor YW = new YacWor();
-		YW.startProcess();
+		//YW.startProcess();
+		
+		Clutch cl = new Clutch();
+		try {
+			cl.startProcess();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 		
