@@ -102,7 +102,7 @@ public class Clutch {
 					// TODO Auto-generated catch block
 					// e6.printStackTrace();
 				}
-				// System.out.println(service_focus);
+				System.out.println(service_focus);
 
 				try {
 					price = item.getElementsByClass("list-item").get(0).text();
@@ -144,30 +144,19 @@ public class Clutch {
 
 				// System.out.println(email+" "+phone_number);
 				// System.out.println(service_focus);
+
+				String[] dataStr = { name, description, star, no_reviews, website, last_review, service_focus, price,
+						avarage_est, location, link, email, phone_number };
+				try {
+					writer.writeNext(dataStr);
+					// FileUtils.writeStringToFile(file, dataStr + "\n", true);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				writer.flush();
 			}
 
-			// sleep function to avoid load
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				// e.printStackTrace();
-			}
-
-			// File file = new File("jsonfiles/" + "Clutch" + ".csv");
-			// String headerString = "Name;Description;Star;Nr. Of reviews;Website;Last
-			// review;Service focus;Price;Avarage Est.;Locatiom;Link;Email;Phone number";
-			String[] dataStr = { name, description, star, no_reviews, website, last_review, service_focus, price,
-					avarage_est, location, link, email, phone_number };
-			try {
-				writer.writeNext(dataStr);
-				// FileUtils.writeStringToFile(file, dataStr + "\n", true);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			writer.flush();
 			// sleep function to avoid load
 			try {
 				Thread.sleep(3000);
