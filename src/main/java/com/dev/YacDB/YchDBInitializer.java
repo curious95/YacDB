@@ -35,7 +35,12 @@ public class YchDBInitializer {
 		
 	
 		Amzn amzn = new Amzn();
-		amzn.startProcess();
+		try {
+			amzn.startProcess();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 		
