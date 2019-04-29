@@ -10,10 +10,10 @@ public class Ingestor {
 	
 	public static void initDriver() {
 		
-		String chromeDriverPath = "/Users/devx/Documents/devx/EC_Wspace/YacDB/res/chromedriver" ;  
+		String chromeDriverPath = "/Users/devx/Documents/devx/EC_Wspace/YacDB/res/chromedriverr" ;  
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);  
 		ChromeOptions options = new ChromeOptions();  
-		options.addArguments("headless");
+		//options.addArguments("headless");
 		options.addArguments ("--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");  
 		driver = new ChromeDriver(options);  
 		

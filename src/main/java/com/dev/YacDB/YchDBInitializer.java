@@ -26,12 +26,16 @@ public class YchDBInitializer {
 		//YW.startProcess();
 		
 		Clutch cl = new Clutch();
-		try {
-			cl.startProcess();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			cl.startProcess();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+	
+		Amzn amzn = new Amzn();
+		amzn.startProcess();
 		
 	}
 		
