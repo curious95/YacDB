@@ -29,9 +29,9 @@ public class Amzn {
 		String cvsSplitBy = ",";
 		
 		
-		//String date = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
+		date = new SimpleDateFormat("dd-MM-yyyy").format(Calendar.getInstance().getTime());
 
-		date = "26-04-2019";
+		//date = "26-04-2019";
 		//System.out.println(date);
 
 		File file = new File("jsonfiles/" + "Amazon" + ".csv");
