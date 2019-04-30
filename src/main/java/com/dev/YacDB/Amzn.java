@@ -24,8 +24,8 @@ public class Amzn {
 
 	public static void startProcess() throws IOException {
 
-		String[] elems = { "#", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
-				"r", "s", "t", "u", "v", "w","x","y","z" };
+		String[] elems = { "%23", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+				"r", "s", "t", "u", "v", "w", "x", "y", "z" };
 
 		String csvFile = "/Users/devx/Documents/devx/EC_Wspace/YacDB/res/input.txt";
 		String line = "";
@@ -64,43 +64,59 @@ public class Amzn {
 						// System.out.println("Category = " + col[0] + " Sub Category = " + col[1] + "
 						// link = "+ col[2]);
 
-						System.out.println(col[2]);
-						
-						Document doc = Jsoup.parse(ingestor.ingest(col[2]));
-						Elements listItems = doc.getElementsByClass("a-list-item");
+						// System.out.println(col[2]);
 
-						for (Element item : listItems) {
+						for (int i = 0; i < elems.length; i++) {
 
-							// System.out.println(item.text());
-							main_category = col[0];
-							sub_category = col[1];
-
-							brand_name = item.getElementsByTag("a").attr("title");
-							no_products = item.getElementsByClass("narrowValue").get(0).text().replace("(", "")
-									.replace(")", "");
-							link = "https://www.amazon.com" + item.getElementsByTag("a").attr("href");
-
-							System.out.println(brand_name + "  " + no_products + "   " + link);
-
-							String[] dataStr = { date, main_category, sub_category, brand_name, no_products, link };
 							try {
-								writer.writeNext(dataStr);
-								// FileUtils.writeStringToFile(file, dataStr + "\n", true);
+								Document doc = Jsoup.parse(ingestor.ingest(col[2] + "&indexField=" + elems[i]));
+								Elements listItems = doc.getElementsByClass("a-list-item");
+
+								for (Element item : listItems) {
+
+									// System.out.println(item.text());
+									main_category = col[0];
+									sub_category = col[1];
+
+									brand_name = item.getElementsByTag("a").attr("title");
+									no_products = item.getElementsByClass("narrowValue").get(0).text().replace("(", "")
+											.replace(")", "");
+									link = "https://www.amazon.com" + item.getElementsByTag("a").attr("href");
+
+									System.out.println(brand_name + "  " + no_products + "   " + link);
+
+									String[] dataStr = { date, main_category, sub_category, brand_name, no_products,
+											link };
+									try {
+										writer.writeNext(dataStr);
+										// FileUtils.writeStringToFile(file, dataStr + "\n", true);
+									} catch (Exception e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+									writer.flush();
+
+								}
+
+								try {
+									Thread.sleep(2000);
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
 							} catch (Exception e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
-							writer.flush();
+
+							try {
+								Thread.sleep(2000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 
 						}
-
-						try {
-							Thread.sleep(2000);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-
 					}
 				} catch (Exception e) {
 					// TODO: handle exception
