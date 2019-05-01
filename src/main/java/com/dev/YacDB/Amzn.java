@@ -41,7 +41,7 @@ public class Amzn {
 		String[] headerString = { "Scraping date", "Main Catagory", "Subcatagory", "Brand name", "Number of products",
 				"Link" };
 		CSVWriter writer = new CSVWriter(outputfile);
-		writer.writeNext(headerString);
+		//writer.writeNext(headerString);
 		try {
 			FileUtils.writeStringToFile(file, headerString + "\n", true);
 		} catch (Exception e) {

@@ -1,3 +1,150 @@
+Main Catagory,SubCatagory,Link
+Amazon Music,,
+Amazon Music Unlimited,,
+Prime Music,,
+Open Web Player,,
+CDs & Vinyl,,
+Download Store,,
+,,
+Echo & Alexa,,
+Echo & Alexa,Echo,
+Echo & Alexa,Echo Plus,
+Echo & Alexa,Echo Dot,
+Echo & Alexa,Echo Spot,
+Echo & Alexa,Echo Show,
+Echo & Alexa,Echo Auto,
+Echo & Alexa,See all devices with Alexa,
+Echo & Alexa,Amazon Smart Plug,
+Echo & Alexa,AmazonBasics Microwave,
+Echo & Alexa,Home Security,
+Echo & Alexa,See all smart home devices,
+Echo & Alexa,Meet Alexa,
+Echo & Alexa,Alexa App,
+Echo & Alexa,Alexa Skills,
+,,
+Fire Tablets,,
+Fire Tablets,Fire 7,
+Fire Tablets,Fire HD 8,
+Fire Tablets,Fire HD 10,
+Fire Tablets,Fire 7 Kids Edition,
+Fire Tablets,Fire HD 8 Kids Edition,
+Fire Tablets,Fire HD 10 Kids Edition,
+Fire Tablets,Accessories,
+Fire Tablets,See all Fire tablets,
+Fire Tablets,Prime Video,
+Fire Tablets,Apps & Games,
+Fire Tablets,Digital Music,
+Fire Tablets,Kindle Books,
+Fire Tablets,Kindle Unlimited,
+Fire Tablets,Amazon FreeTime Unlimited,
+Fire Tablets,Newsstand,
+Fire Tablets,Manage Your Content and Devices,
+,,
+Fire TV,,
+Fire TV,Fire TV Stick,
+Fire TV,Introducing Fire TV Stick 4K,
+Fire TV,Fire TV Cube,
+Fire TV,Fire TV Recast,
+Fire TV,See Fire TV Family,
+Fire TV,Prime Video - Included with Prime,
+Fire TV,Fire TV Apps & Channels,
+Fire TV,Games for Fire TV,
+Fire TV,Amazon Photos,
+,,
+Kindle E-readers & Books,,
+Kindle E-readers & Books,All-new Kindle,
+Kindle E-readers & Books,All-new Kindle Paperwhite,
+Kindle E-readers & Books,Kindle Oasis,
+Kindle E-readers & Books,Kindle for Kids Bundle,
+Kindle E-readers & Books,Accessories,
+Kindle E-readers & Books,See all Kindle E-Readers,
+Kindle E-readers & Books,Kindle Books,
+Kindle E-readers & Books,Newsstand,
+Kindle E-readers & Books,Kindle Unlimited,
+Kindle E-readers & Books,Prime Reading,
+Kindle E-readers & Books,Free Kindle Reading Apps,
+Kindle E-readers & Books,Kindle Cloud Reader,
+Kindle E-readers & Books,Manage Your Content and Devices,
+,,
+Appstore for Android,,
+Appstore for Android,All Apps and Games,
+Appstore for Android,Games,
+Appstore for Android,Amazon Coins,
+Appstore for Android,Download Amazon Appstore,
+Appstore for Android,Amazon Apps,
+Appstore for Android,Your Apps and Subscriptions,
+,,
+Books & Audible,,
+Books & Audible,Books,
+Books & Audible,Children's Books,
+Books & Audible,AbeBooks.com,
+Books & Audible,Comics & Graphic Novels,
+Books & Audible,Magazines,
+Books & Audible,Textbooks,
+Books & Audible,Textbook Rentals,
+Books & Audible,Sell Us Your Books,
+Books & Audible,Prime Student,
+Books & Audible,Kindle Books,
+Books & Audible,Kindle Unlimited,
+Books & Audible,Prime Reading,
+Books & Audible,Whispersync for Voice,
+Books & Audible,Audible Membership,
+Books & Audible,Audible Audiobooks,
+,,
+Alexa Smart Home,,
+Alexa Smart Home,Lighting,
+Alexa Smart Home,Plugs,
+Alexa Smart Home,Cameras,
+Alexa Smart Home,Door Locks,
+Alexa Smart Home,Thermostats,
+Alexa Smart Home,TV & Video,
+Alexa Smart Home,Audio & Home Theater,
+Alexa Smart Home,Vacuums,
+Alexa Smart Home,Voice Assistants,
+Alexa Smart Home,Other Smart Solutions,
+,,
+Amazon Business,,
+Amazon Business,,
+Subscribe with Amazon,,
+Subscribe & Save,,
+All Subscription Boxes,,
+International Shopping,,
+Where we ship,,
+Visit Amazon Global,,
+,,
+Pet supplies,,
+Pet supplies,Dogs,https://www.amazon.com/s/other?rh=n%3A%2116225013011%2Cn%3A2975312011&bbn=16225013011&pickerToList=lbr_brands_browse-bin&qid=1553629460&ref=sr_sa_p_89
+Pet supplies,Cats,https://www.amazon.com/s/other?rh=n%3A%2116225013011%2Cn%3A2975241011&bbn=16225013011&pickerToList=lbr_brands_browse-bin&qid=1553629456&ref=sr_sa_p_89
+Pet supplies,Fish & Aquatic Pets,https://www.amazon.com/s/other?rh=n%3A%2116225013011%2Cn%3A2975446011&bbn=16225013011&pickerToList=lbr_brands_browse-bin&qid=1553629447&ref=sr_sa_p_89
+Pet supplies,Birds,https://www.amazon.com/s/other?rh=n%3A%2116225013011%2Cn%3A2975221011&bbn=16225013011&pickerToList=lbr_brands_browse-bin&qid=1553629442&ref=sr_sa_p_89
+Pet supplies,Horses,https://www.amazon.com/s/other?rh=n%3A%2116225013011%2Cn%3A2975481011&bbn=16225013011&pickerToList=lbr_brands_browse-bin&qid=1553629438&ref=sr_sa_p_89
+Pet supplies,Reptiles & Amphibians,https://www.amazon.com/s/other?rh=n%3A%2116225013011%2Cn%3A2975504011&bbn=16225013011&pickerToList=lbr_brands_browse-bin&qid=1553629429&ref=sr_sa_p_89
+Pet supplies,Small Animals,https://www.amazon.com/s/other?rh=n%3A%2116225013011%2Cn%3A2975520011&bbn=16225013011&pickerToList=lbr_brands_browse-bin&qid=1553629420&ref=sr_sa_p_89
+,,
+Sports and Outdoors,,
+Sports and Outdoors,Sports and Outdoors,https://www.amazon.com/gp/search/other/ref=lp_16225014011_sa_p_89?rh=i%3Asporting-intl-ship%2Cn%3A%2116225014011&bbn=16225014011&pickerToList=lbr_brands_browse-bin&ie=UTF8&qid=1553623965
+Sports and Outdoors,Outdoor Recreation,https://www.amazon.com/s/other?rh=n%3A%2116225014011%2Cn%3A706814011&bbn=16225014011&pickerToList=lbr_brands_browse-bin&qid=1553629414&ref=sr_sa_p_89
+Sports and Outdoors,Sports & Fitness,https://www.amazon.com/s/other?rh=n%3A%2116225014011%2Cn%3A10971181011&bbn=16225014011&pickerToList=lbr_brands_browse-bin&qid=1553629410&ref=sr_sa_p_89
+Sports and Outdoors,Fan Shop,https://www.amazon.com/s/other?rh=n%3A%2116225014011%2Cn%3A3386071&bbn=16225014011&pickerToList=lbr_brands_browse-bin&qid=1553629406&ref=sr_sa_p_89
+,,
+Baby,,
+Baby,Activity & Entertainment,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A239225011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629400&ref=sr_sa_p_89
+Baby,Apparel & Accessories,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A7147444011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629396&ref=sr_sa_p_89
+Baby,Baby & Toddler Toys,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A196601011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629393&ref=sr_sa_p_89
+Baby,Baby Care,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A17720255011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629389&ref=sr_sa_p_89
+Baby,Baby Stationery,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A405369011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629382&ref=sr_sa_p_89
+Baby,Car Seats & Accessories,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A166835011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629379&ref=sr_sa_p_89
+Baby,Diapering,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A166764011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629374&ref=sr_sa_p_89
+Baby,Feeding,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A166777011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629371&ref=sr_sa_p_89
+Baby,Gifts,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A239226011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629367&ref=sr_sa_p_89
+Baby,Nursery,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A695338011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629364&ref=sr_sa_p_89
+Baby,Potty Training,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A166887011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629360&ref=sr_sa_p_89
+Baby,Pregnancy & Maternity,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A166804011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629357&ref=sr_sa_p_89
+Baby,Safety,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A166863011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629350&ref=sr_sa_p_89
+Baby,Strollers & Accessories,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A8446318011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629345&ref=sr_sa_p_89
+Baby,Travel Gear,https://www.amazon.com/s/other?rh=n%3A%2116225005011%2Cn%3A17726796011&bbn=16225005011&pickerToList=lbr_brands_browse-bin&qid=1553629340&ref=sr_sa_p_89
+,,
+Automotive,,
 Automotive,Car Care,https://www.amazon.com/s/other?rh=n%3A2562090011%2Cn%3A%2115690151%2Cn%3A15718271&bbn=2562090011&pickerToList=lbr_brands_browse-bin&qid=1553629332&ref=sr_sa_p_89
 Automotive,Car Electronics & Accessories,https://www.amazon.com/s/other?rh=n%3A2562090011%2Cn%3A%2115690151%2Cn%3A2230642011&bbn=2562090011&pickerToList=lbr_brands_browse-bin&qid=1553629327&ref=sr_sa_p_89
 Automotive,Exterior Accessories,https://www.amazon.com/s/other?rh=n%3A2562090011%2Cn%3A%2115690151%2Cn%3A15857511&bbn=2562090011&pickerToList=lbr_brands_browse-bin&qid=1553629316&ref=sr_sa_p_89
