@@ -37,17 +37,12 @@ public class Amzn {
 		// System.out.println(date);
 
 		File file = new File("jsonfiles/" + "Amazon" + ".csv");
-		FileWriter outputfile = new FileWriter(file);
+		FileWriter outputfile = new FileWriter(file,true);
 		String[] headerString = { "Scraping date", "Main Catagory", "Subcatagory", "Brand name", "Number of products",
 				"Link" };
 		CSVWriter writer = new CSVWriter(outputfile);
 		//writer.writeNext(headerString);
-		try {
-			FileUtils.writeStringToFile(file, headerString + "\n", true);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 
 		Ingestor ingestor = new Ingestor();
 		ingestor.initDriver(); // Driver instance begins here
@@ -83,7 +78,7 @@ public class Amzn {
 											.replace(")", "");
 									link = "https://www.amazon.com" + item.getElementsByTag("a").attr("href");
 
-									System.out.println(brand_name + "  " + no_products + "   " + link);
+									System.out.println(main_category+"   "+sub_category+ "    "+ elems[i]+"    "+brand_name + "  " + no_products + "   ");
 
 									String[] dataStr = { date, main_category, sub_category, brand_name, no_products,
 											link };
